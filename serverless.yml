@@ -51,7 +51,7 @@ functions:
     handler: handler.pokemon
     events:
       - http:
-          path: handler.js
+          path: pokemon5
           method: POST
     environment:
       url: 'https://pokeapi.co/api/v2/pokemon/'

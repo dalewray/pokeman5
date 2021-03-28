@@ -221,7 +221,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/list5/dev/1616961844803-2021-03-28T20:04:04.803Z/list5.zip"
+                "S3Key": "serverless/list5/dev/1616966064154-2021-03-28T21:14:24.154Z/list5.zip"
               },
               "Handler": "s_pokemon.handler",
               "Runtime": "nodejs12.x",
@@ -246,14 +246,14 @@
               "PokemonLogGroup"
             ]
           },
-          "PokemonLambdaVersionejfoKuVbk6k3WYjk2DsY2tEV2vZxRfeEP4mMzTQNI": {
+          "PokemonLambdaVersionhBtVgceexKOGnmr9NgCvjFANkqr0Zilyh88naB28g": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "PokemonLambdaFunction"
               },
-              "CodeSha256": "nOmkhJU1coE/m8hANC2TgvpAku8KC3I2f+lTtcYbbys="
+              "CodeSha256": "ZbMC1KfVZnV7WybVY//AVA5o6QWV8jx4dbIH4Te9Pic="
             }
           },
           "ApiGatewayRestApi": {
@@ -268,7 +268,7 @@
               "Policy": ""
             }
           },
-          "ApiGatewayResourceHandlerjs": {
+          "ApiGatewayResourcePokemon5": {
             "Type": "AWS::ApiGateway::Resource",
             "Properties": {
               "ParentId": {
@@ -277,19 +277,19 @@
                   "RootResourceId"
                 ]
               },
-              "PathPart": "handler.js",
+              "PathPart": "pokemon5",
               "RestApiId": {
                 "Ref": "ApiGatewayRestApi"
               }
             }
           },
-          "ApiGatewayMethodHandlerjsPost": {
+          "ApiGatewayMethodPokemon5Post": {
             "Type": "AWS::ApiGateway::Method",
             "Properties": {
               "HttpMethod": "POST",
               "RequestParameters": {},
               "ResourceId": {
-                "Ref": "ApiGatewayResourceHandlerjs"
+                "Ref": "ApiGatewayResourcePokemon5"
               },
               "RestApiId": {
                 "Ref": "ApiGatewayRestApi"
@@ -326,7 +326,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1616961817343": {
+          "ApiGatewayDeployment1616966032449": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -335,7 +335,7 @@
               "StageName": "dev"
             },
             "DependsOn": [
-              "ApiGatewayMethodHandlerjsPost"
+              "ApiGatewayMethodPokemon5Post"
             ]
           },
           "PokemonLambdaPermissionApiGateway": {
@@ -484,7 +484,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/list5/dev/1616961844803-2021-03-28T20:04:04.803Z/custom-resources.zip"
+                "S3Key": "serverless/list5/dev/1616966064154-2021-03-28T21:14:24.154Z/custom-resources.zip"
               },
               "FunctionName": "list5-dev-custom-resource-apigw-cw-role",
               "Handler": "apiGatewayCloudWatchRole/handler.handler",
@@ -540,7 +540,7 @@
           "PokemonLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "PokemonLambdaVersionejfoKuVbk6k3WYjk2DsY2tEV2vZxRfeEP4mMzTQNI"
+              "Ref": "PokemonLambdaVersionhBtVgceexKOGnmr9NgCvjFANkqr0Zilyh88naB28g"
             }
           },
           "ServiceEndpoint": {
@@ -667,7 +667,7 @@
         "events": [
           {
             "http": {
-              "path": "handler.js",
+              "path": "pokemon5",
               "method": "post",
               "integration": "AWS_PROXY"
             }
@@ -684,7 +684,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "PokemonLambdaVersionejfoKuVbk6k3WYjk2DsY2tEV2vZxRfeEP4mMzTQNI"
+        "versionLogicalId": "PokemonLambdaVersionhBtVgceexKOGnmr9NgCvjFANkqr0Zilyh88naB28g"
       }
     },
     "configValidationMode": "warn",
@@ -716,7 +716,7 @@
     "artifact": "/Users/dwray/Documents/node/pokeman/pokemon/.serverless/list5.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/list5/dev/1616961844803-2021-03-28T20:04:04.803Z",
+    "artifactDirectoryName": "serverless/list5/dev/1616966064154-2021-03-28T21:14:24.154Z",
     "artifact": "list5.zip"
   }
 }

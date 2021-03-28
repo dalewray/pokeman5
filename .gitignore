@@ -1,1 +1,4 @@
 node_modules
+.serverless/cloudformation-template-update-stack.json
+.serverless/list5.zip
+.gitignore
